@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyCalculator</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="particle-container" id="particleContainer"></div>
+    
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">💱</span>
+                <h1>MoneyCalculator</h1>
+            </div>
+            <button class="refresh-btn" id="refreshBtn">
+                <span class="refresh-icon">↻</span>
+                <span>Actualizar</span>
+            </button>
+        </header>
+
+        <div class="converter-card">
+            <div class="card-glow"></div>
+            
+            <div class="currency-section from-section">
+                <label class="currency-label">Convertir desde</label>
+                <div class="input-group">
+                    <input 
+                        type="number" 
+                        class="amount-input" 
+                        id="fromAmount" 
+                        placeholder="0.00"
+                        autocomplete="off"
+                    >
+                    <div class="currency-select-wrapper">
+                        <button class="currency-select" id="fromCurrencyBtn">
+                            <span class="flag" id="fromFlag">🇺🇸</span>
+                            <span class="code" id="fromCode">USD</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="currency-name" id="fromName">Dólar Estadounidense</div>
+            </div>
+
+            <button class="swap-btn" id="swapBtn">
+                <div class="swap-icon">⇅</div>
+            </button>
+
+            <div class="currency-section to-section">
+                <label class="currency-label">Recibir en</label>
+                <div class="input-group">
+                    <input 
+                        type="number" 
+                        class="amount-input result-input" 
+                        id="toAmount" 
+                        placeholder="0.00"
+                        readonly
+                    >
+                    <div class="currency-select-wrapper">
+                        <button class="currency-select" id="toCurrencyBtn">
+                            <span class="flag" id="toFlag">🇲🇽</span>
+                            <span class="code" id="toCode">MXN</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="currency-name" id="toName">Peso Mexicano</div>
+            </div>
+
+            <div class="rate-info" id="rateInfo">
+                <div class="rate-text">
+                    <span class="rate-label">Tasa de cambio:</span>
+                    <span class="rate-value" id="rateValue">1 USD = 17.35 MXN</span>
+                </div>
+                <div class="rate-trend" id="rateTrend">
+                    <span class="trend-icon">📈</span>
+                    <span class="trend-value">+0.23%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="currency-grid" id="currencyGrid">
+        </div>
+
+        <div class="modal" id="currencyModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Seleccionar moneda</h2>
+                    <button class="close-btn" id="closeModal">✕</button>
+                </div>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Buscar moneda..."
+                >
+                <div class="currency-list" id="currencyList">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/CurrencyData.js"></script>
+    <script src="../js/RateCalculator.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/converter.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
